@@ -1,5 +1,3 @@
-<app-navbar></app-navbar>
-
 <div class="main-content-area">  
   <section class="py-5 bg-white text-center" >
   <div class="container">
@@ -149,29 +147,50 @@
                 <div class="col-lg-8 p-4 p-md-5">
                     <h3 class="fw-bold mb-4">Entre em Contato!</h3>
                     
-                    <form action="#" id="contact-form">
-                        <div class="mb-3">
-                            <label for="contact-name" class="form-label">Nome completo</label>
-                            <input type="text" class="form-control" id="contact-name" placeholder="Digite seu nome...">
-                        </div>
-                        <div class="mb-3">
-                            <label for="contact-email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="contact-email" placeholder="Digite seu email...">
-                        </div>
-                        <div class="mb-3">
-                            <label for="contact-phone" class="form-label">Telefone/Whatsapp</label>
-                            <input type="tel" class="form-control" id="contact-phone" placeholder="Digite seu telefone...">
-                        </div>
-                        <div class="mb-3">
-                            <label for="contact-subject" class="form-label">Assunto</label>
-                            <input type="text" class="form-control" id="contact-subject" placeholder="Digite o assunto...">
-                        </div>
-                        <div class="mb-4">
-                            <label for="contact-message" class="form-label">Mensagem</label>
-                            <textarea class="form-control" id="contact-message" rows="5" placeholder="Digite sua mensagem..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100 py-2 rounded-pill fw-semibold">Falar com a Clínica</button>
-                    </form>
+                   <div *ngIf="!enviado">
+                        <form id="contact-form" (ngSubmit)="enviarContato()">
+                          <div class="mb-3">
+                            <label class="form-label">Nome completo</label>
+                            <input type="text" class="form-control" placeholder="Digite seu nome..."
+                                  [(ngModel)]="contato.nome" name="nome" required>
+                          </div>
+
+                          <div class="mb-3">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" placeholder="Digite seu email..."
+                                  [(ngModel)]="contato.email" name="email" required>
+                          </div>
+
+                          <div class="mb-3">
+                            <label class="form-label">Telefone/Whatsapp</label>
+                            <input type="tel" class="form-control" placeholder="Digite seu telefone..."
+                                  [(ngModel)]="contato.telefone" name="telefone">
+                          </div>
+
+                          <div class="mb-3">
+                            <label class="form-label">Assunto</label>
+                            <input type="text" class="form-control" placeholder="Digite o assunto..."
+                                  [(ngModel)]="contato.assunto" name="assunto">
+                          </div>
+
+                          <div class="mb-4">
+                            <label class="form-label">Mensagem</label>
+                            <textarea class="form-control" rows="5" placeholder="Digite sua mensagem..."
+                                      [(ngModel)]="contato.mensagem" name="mensagem"></textarea>
+                          </div>
+
+                          <button type="submit" class="btn btn-primary w-100 py-2 rounded-pill fw-semibold">
+                            Falar com a Clínica
+                          </button>
+                        </form>
+                      </div>
+
+                      <!-- Mensagem após envio -->
+                      <div *ngIf="enviado" class="text-center py-5">
+                        <h4>Obrigado! Sua mensagem foi enviada.</h4>
+                        <p>Entraremos em contato em breve.</p>
+                      </div>
+
                 </div>
                 
                 <div class="col-lg-4 p-4 p-md-5 text-white contact-info-box">
@@ -231,6 +250,3 @@
     </div>
 </section>
 </div>
-
-<app-footer></app-footer>
-  
