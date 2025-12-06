@@ -1,17 +1,43 @@
-/* --- Banner --- */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+}
+
+app-root {
+  min-height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+}
+
+.main-content-area {
+  flex-grow: 1; 
+}
+
+footer,
+app-footer {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
 .banner-section {
   background: linear-gradient(128deg, #ffffff 15%, #4FB3FF 100%);
   color: #000 !important;
   position: relative;
-  overflow: visible;
-  padding: 80px 0 120px; 
+  overflow: hidden;
+  padding: 80px 0 80px;
 }
+
 .banner-section .text-content {
   max-width: 520px;
   z-index: 2;
   position: relative;
   color: #000000;
 }
+
 .banner-section .image-content {
   position: relative;
   z-index: 3;
@@ -19,21 +45,22 @@
   justify-content: center;
   align-items: flex-end;
 }
+
 .banner-section .doctor-img {
   max-width: 310px;
   position: relative;
-  bottom: -49px; 
+  bottom: -50px;
   right: 0;
   z-index: 5;
 }
 
-/* --- Áreas de Atuação e Cards --- */
 .areas-section {
-  background: linear-gradient(125deg, #ffffff 3%, #4FB3FF 70%);
-  padding-top: 140px; 
+  background: linear-gradient(124deg, #ffffff 3%, #4FB3FF 70%);
+  padding-top: 70px;
   position: relative;
   z-index: 1;
 }
+
 .service-card {
   background: #fff;
   border-radius: 16px;
@@ -45,66 +72,239 @@
   flex-direction: column;
   justify-content: flex-start;
 }
+
 .feature-box p {
   color: #555;
   font-size: 0.95rem;
 }
 
-/* --- Sobre Nós --- */
 .about-us-section {
-    background-color: #f8f9fa; 
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+  background-color: #f8f9fa; 
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
+
 .about-feature h5 {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
 }
+
 .about-feature i {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
+
 .about-image-wrapper {
-    border: none;
+  border: none;
 }
 
-/* --- Contato --- */
 .contact-section .form-control {
-    background-color: #f8f9fa;
-    border: 1px solid #e9ecef;
-    padding: 10px 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  padding: 10px 15px;
 }
+
 .contact-section .form-control:focus {
-    background-color: #fff;
-    border-color: #007bff;
-    box-shadow: none;
+  background-color: #fff;
+  border-color: #007bff;
+  box-shadow: none;
 }
+
 .contact-info-box {
-    background-color: #007bff; 
+  background-color: #007bff; 
 }
 
-/* --- App Download --- */
 .app-download-section a {
-    text-decoration: none;
-}
-.app-badge {
-    height: 90px;
-    width: auto;
-    display: inline-block;
-    transition: transform 0.2s ease;
-}
-.app-badge:hover {
-    transform: scale(1.05);
+  text-decoration: none;
 }
 
-/* --- Responsividade (Media Queries) --- */
+.app-badge {
+  height: 90px;
+  width: auto;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.app-badge:hover {
+  transform: scale(1.05);
+}
+
+.footer-dark {
+  background-color: #0c1427;
+  width: 100%;
+  padding: 40px 0;
+  margin: 0;
+}
+
+/* ==================================== */
+/* 3. MEDIA QUERIES */
+/* ==================================== */
+
 @media (max-width: 992px) {
-  .banner-section { padding-bottom: 80px; }
-  .banner-section .doctor-img { bottom: -90px; max-width: 220px; }
-  .areas-section { padding-top: 120px; }
+  .banner-section { padding-bottom: 60px; }
+  .banner-section .doctor-img { max-width: 220px; }
+  .areas-section { padding-top: 80px; }
   .app-download-section .col-lg-7 { text-align: center; }
 }
+
 @media (max-width: 576px) {
-  .banner-section .doctor-img { position: static; margin: 0 auto; display: block; }
+  .banner-section .doctor-img {
+    position: static;
+    margin: 0 auto;
+    display: block;
+  }
+
   .areas-section { padding-top: 60px; }
+}
+
+/* ============================= */
+/* AJUSTES GERAIS MOBILE */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  section {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+
+  h2, h3, h4 {
+    font-size: 1.35rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+}
+
+
+/* ============================= */
+/* BANNER RESPONSIVO */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .banner-section {
+    padding: 60px 0 40px;
+    text-align: center;
+  }
+
+  .banner-section .text-content {
+    max-width: 100%;
+  }
+
+  .banner-section .doctor-img {
+    max-width: 200px;
+    position: static;
+    margin-top: 25px;
+  }
+
+}
+
+
+/* ============================= */
+/* CARDS DE SERVIÇOS */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .service-card {
+    height: auto; /* remove quebra */
+    padding: 20px;
+  }
+
+  .service-card h5 {
+    font-size: 1rem;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+  }
+
+}
+
+
+/* ============================= */
+/* POR QUE ESCOLHER - ÍCONES */
+/* ============================= */
+
+@media (max-width: 576px) {
+
+  .feature-box i {
+    font-size: 2rem !important;
+  }
+
+  .feature-box h5 {
+    font-size: 1rem;
+  }
+
+}
+
+
+/* ============================= */
+/* SOBRE NÓS */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .about-us-section h2,
+  .about-us-section p {
+    text-align: center !important;
+    padding-right: 0 !important;
+  }
+
+  .about-feature {
+    text-align: left;
+  }
+
+}
+
+
+/* ============================= */
+/* FORMULÁRIO CONTATO */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  .contact-wrapper {
+    border-radius: 12px;
+  }
+
+  .contact-info-box {
+    text-align: center;
+  }
+
+  .contact-info-box i {
+    margin-right: 8px;
+  }
+
+}
+
+
+/* ============================= */
+/* ÁREA DE DOWNLOAD DO APP */
+/* ============================= */
+
+@media (max-width: 576px) {
+
+  .app-badge {
+    height: 65px;
+    margin-top: 10px;
+  }
+
+  .app-download-section h4 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .app-download-section p {
+    text-align: center;
+  }
+
 }

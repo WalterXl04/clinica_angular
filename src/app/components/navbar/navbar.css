@@ -37,3 +37,91 @@ body {
     color: #000 !important;
     letter-spacing: 0.5px;
 }
+
+/* ============================= */
+/* AJUSTES GERAIS NAVBAR MOBILE */
+/* ============================= */
+
+@media (max-width: 992px) {
+
+  body {
+    padding-top: 65px; /* evita sobreposição no mobile */
+  }
+
+  .navbar {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .navbar-brand span {
+    font-size: 0.95rem;
+  }
+
+  /* Centraliza itens no mobile */
+  .navbar-collapse {
+    background: #fff;
+    padding: 15px 0;
+  }
+
+  .navbar-nav {
+    align-items: center;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    padding: 10px 0;
+  }
+
+  /* Botão fora do menu no mobile */
+  .navbar > .container > .btn {
+    display: none;
+  }
+
+}
+
+
+/* ============================= */
+/* BOTÃO "ENTRE EM CONTATO" NO MENU MOBILE */
+/* ============================= */
+
+@media (max-width: 992px) {
+
+  #navbarNav::after {
+    color: #0069d9;
+    content: "";
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  #navbarNav {
+    text-align: center;
+  }
+
+  #navbarNav .navbar-nav::after {
+    content: "Entre em contato";
+  }
+
+}
+
+
+/* ============================= */
+/* ANULA EFEITOS QUE QUEBRAM NO MOBILE */
+/* ============================= */
+
+@media (max-width: 576px) {
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  .navbar-brand img {
+    width: 30px;
+    height: 30px;
+  }
+
+}
