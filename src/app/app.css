@@ -1,0 +1,4 @@
+html, body {
+  height: 100%; /* Garante que body e html ocupam 100% da viewport */
+  margin: 0; /* Remove margens padrão que podem causar barras de rolagem desnecessárias */
+}
