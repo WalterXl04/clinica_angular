@@ -1,0 +1,30 @@
+:host {
+    display: block;
+    min-height: 100vh; /* Garante que o menu vá até o fim da tela */
+    background-color: #fff;
+}
+
+.sidebar-heading {
+    font-size: 1.2rem;
+}
+
+.list-group-item {
+    border: none;
+    padding: 20px 30px;
+}
+
+.list-group-item.active {
+    background-color: transparent;
+    color: #0d6efd; /* Azul do Bootstrap */
+    font-weight: bold;
+    border-right: 4px solid #0d6efd; /* Barrinha azul na direita */
+}
+
+.second-text {
+    color: #6c757d;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+    color: #0d6efd;
+}

@@ -1,0 +1,50 @@
+<main class="container p-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="h3 border-start border-4 border-dark ps-2">Médicos Cadastrados</h2>
+        
+        <a routerLink="/sistema/admin/medicos/novo" class="btn btn-primary text-white fw-bold">
+            Novo Médico
+        </a>
+    </div>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="bg-light border-bottom">
+                        <tr>
+                            <th class="ps-4 py-3">Nome</th>
+                            <th>CRM</th>
+                            <th>Especialidade</th>
+                            <th>Telefone</th>
+                            <th class="text-end pe-4">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let m of medicos">
+                            <td class="ps-4 fw-bold">{{ m.nome }}</td>
+                            <td>{{ m.crm }}</td>
+                            <td>
+                                <span class="badge bg-secondary">{{ m.especialidade }}</span>
+                            </td>
+                            <td>{{ m.telefone }}</td>
+                            <td class="text-end pe-4">
+                                
+                                <button class="btn btn-sm btn-outline-primary me-2" (click)="editar(m)">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                
+                                <button class="btn btn-sm btn-outline-danger" (click)="excluir(m)">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</main>

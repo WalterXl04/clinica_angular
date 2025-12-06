@@ -1,0 +1,196 @@
+<div class="row g-4">
+            
+    <div class="col-lg-8">
+        
+        <div class="alert welcome-alert d-flex align-items-center mb-4 shadow-sm border-0">
+            <img src="assets/img/logo.png" alt="Logo" style="width: 40px; margin-right: 15px; opacity: 0.7;">
+            <div>
+                <h5 class="m-0 fw-bold">Bem-vindo(a) de volta, Walter!</h5>
+                <p class="m-0 small">Você está na Clínica Saúde é Viver. Tenha um ótimo dia de trabalho!</p>
+            </div>
+        </div>
+
+        <h2 class="h4 mb-3 fw-bold text-secondary">Módulos de Gerenciamento</h2>
+        
+        <div class="row g-4 mb-4">
+            
+            <div class="col-lg-4 col-md-6">
+                <a routerLink="/sistema/atendimento/pacientes" class="action-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="action-title">Pacientes</h5>
+                        <i class="bi bi-person-lines-fill fs-4 text-primary"></i>
+                    </div>
+                    <p>Listar e cadastrar pacientes</p>
+                </a>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <a routerLink="/sistema/admin/medicos" class="action-card"> 
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="action-title">Médicos</h5>
+                        <i class="bi bi-heart-pulse fs-4 text-danger"></i>
+                    </div>
+                    <p>Gerenciar corpo clínico</p>
+                </a>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <a routerLink="/sistema/admin/atendentes" class="action-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="action-title">Atendentes</h5>
+                        <i class="bi bi-person-badge fs-4 text-warning"></i>
+                    </div>
+                    <p>Gerenciar equipe</p>
+                </a>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <a routerLink="/sistema/agendamento" class="action-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="action-title">Consultas</h5>
+                        <i class="bi bi-calendar2-check fs-4 text-success"></i>
+                    </div>
+                    <p>Gerenciar agendamentos</p>
+                </a>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <a routerLink="/sistema/atendimento" class="action-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="action-title">Atendimentos</h5>
+                        <i class="bi bi-clipboard2-pulse fs-4 text-info"></i>
+                    </div>
+                    <p>Registrar atendimentos</p>
+                </a>
+            </div>
+            
+            <div class="col-lg-4 col-md-6">
+                <a routerLink="/sistema/admin/convenios" class="action-card">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="action-title">Convênios</h5>
+                        <i class="bi bi-card-list fs-4 text-secondary"></i>
+                    </div>
+                    <p>Gerenciar planos</p>
+                </a>
+            </div>
+
+        </div> 
+        
+        <div class="card appointments-card shadow-sm">
+            <div class="card-body">
+                
+                <div class="input-group mb-4">
+                    <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-search"></i></span>
+                    <input type="text" class="form-control border-start-0" placeholder="Buscar Pacientes na agenda">
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="list-group list-group-flush mb-3" id="appointments-tabs">
+                            <a href="javascript:void(0)" class="list-group-item list-group-item-action active">
+                                <i class="bi bi-calendar-week me-2"></i> PRÓXIMOS
+                            </a>
+                            <a href="javascript:void(0)" class="list-group-item list-group-item-action">
+                                <i class="bi bi-clock-history me-2"></i> PENDENTES
+                            </a>
+                            <a href="javascript:void(0)" class="list-group-item list-group-item-action">
+                                <i class="bi bi-cake2 me-2"></i> ANIVERSÁRIOS
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-8">
+                        <div class="table-responsive">
+                            <table class="table align-middle table-hover">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th scope="col">Data/Hora</th>
+                                        <th scope="col">Paciente</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>25/10/2025 14:00</td>
+                                        <td>Ana Silva</td>
+                                        <td><span class="badge bg-success-subtle text-success-emphasis rounded-pill">Confirmado</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>25/10/2025 14:30</td>
+                                        <td>Bruno Costa</td>
+                                        <td><span class="badge bg-warning-subtle text-warning-emphasis rounded-pill">Em espera</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div> 
+    </div> 
+
+    <div class="col-lg-4">
+        
+        <div class="card mb-4 shadow-sm border-0">
+            <div class="card-body">
+                <h5 class="card-title mb-3 fw-bold text-secondary"><i class="bi bi-info-circle me-2"></i>INFORMATIVOS</h5>
+                
+                <div class="list-group list-group-flush">
+                    <a href="javascript:void(0)" class="list-group-item list-group-item-action px-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <strong class="mb-1">Feliz Natal!</strong>
+                            <small class="text-muted">24/12</small>
+                        </div>
+                        <small class="text-muted">Nossos agradecimentos a equipe...</small>
+                    </a>
+                    <a href="javascript:void(0)" class="list-group-item list-group-item-action px-0">
+                        <div class="d-flex w-100 justify-content-between">
+                            <strong class="mb-1">Pesquisa interna</strong>
+                            <small class="text-muted">20/10</small>
+                        </div>
+                        <small class="text-muted">Participe da pesquisa de satisfação.</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h5 class="card-title mb-3 fw-bold text-secondary"><i class="bi bi-bar-chart-line me-2"></i>Métricas mensais</h5>
+                
+                <div class="row g-3">
+                    <div class="col-6">
+                        <div class="metric-card p-2 text-center border rounded bg-light">
+                            <i class="bi bi-person-plus text-warning fs-3"></i>
+                            <div class="fw-bold fs-5">1</div>
+                            <small class="text-muted">Em espera</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="metric-card p-2 text-center border rounded bg-light">
+                            <i class="bi bi-person-check text-success fs-3"></i>
+                            <div class="fw-bold fs-5">1</div>
+                            <small class="text-muted">Confirmados</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="metric-card p-2 text-center border rounded bg-light">
+                            <i class="bi bi-calendar-check text-primary fs-3"></i>
+                            <div class="fw-bold fs-5">6</div>
+                            <small class="text-muted">Agendados</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="metric-card p-2 text-center border rounded bg-light">
+                            <i class="bi bi-person-x text-danger fs-3"></i>
+                            <div class="fw-bold fs-5">0</div>
+                            <small class="text-muted">Cancelados</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> 
+</div>
