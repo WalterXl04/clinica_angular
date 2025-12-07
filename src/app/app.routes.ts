@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import {LoginComponent} from './pages/public/login/login';
 
 // IMPORTS DE LAYOUT E HOME
 import { PublicLayoutComponent } from './layout/public-layout/public-layout';
@@ -24,6 +25,7 @@ import { ConsultasComponent } from './pages/private/administrativo/consultas/con
 import { ConsultasFormComponent } from './pages/private/administrativo/consultas-form/consultas-form';
 
 
+
 export const routes: Routes = [
     // Rota 1: Site Público
     {
@@ -31,7 +33,8 @@ export const routes: Routes = [
         component: PublicLayoutComponent,
         children: [
             { path: '', component: Home },
-            { path: 'home', redirectTo: '' }
+            { path: 'home', redirectTo: '' },
+            { path: 'login', component: LoginComponent }
         ]
     },
 

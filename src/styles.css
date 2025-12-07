@@ -1,4 +1,5 @@
 
+
 @import url('https://fonts.googleapis.com/css2?family:Inter:wght@400;500;700&display=swap');
 
 /* Altura da Navbar Fixa (Ajuste este valor se a sua for maior ou menor) */
@@ -89,3 +90,16 @@ body::after {
 :target {
     scroll-margin-top: 100px; /* Use um valor um pouco maior que a altura da sua Navbar */
 }
+
+body.login-active-page {
+    overflow-y: hidden; 
+}
+
+
+
+
+
+
+
+
+

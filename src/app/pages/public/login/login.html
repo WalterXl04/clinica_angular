@@ -1,0 +1,53 @@
+<div class="page-container">
+  <main class="login-container">
+
+    <div class="text-center mb-4">
+      <a routerLink="/">
+        <img src="/assets/img/logo.png" alt="Logo Cuidar é Viver" class="login-logo mb-2">
+      </a>
+      <h4 class="login-slogan">CUIDAR É VIVER</h4>
+    </div>
+
+    <h2 class="login-title mb-4">ACESSO DO COLABORADOR</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+      <div class="input-field mb-3">
+        <i class="bi bi-person me-2"></i>
+        <input type="email" 
+               class="form-control" 
+               formControlName="email" 
+               placeholder="Digite seu email">
+      </div>
+      
+      <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || submitted)" class="text-danger small mb-2">
+         Email inválido ou obrigatório.
+      </div>
+
+      <div class="input-field mb-4">
+        <i class="bi bi-lock me-2"></i>
+        <input type="password" 
+               class="form-control" 
+               formControlName="senha" 
+               placeholder="Digite sua senha">
+      </div>
+
+      <div *ngIf="loginForm.get('senha')?.invalid && (loginForm.get('senha')?.touched || submitted)" class="text-danger small mb-2">
+         A senha é obrigatória.
+      </div>
+
+      <div class="text-end mb-4">
+        <a routerLink="/esqueceu-senha" class="forgot-password-link">
+          Esqueceu sua senha?
+        </a>
+      </div>
+      
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary btn-lg">
+          Entrar
+        </button>
+      </div>
+
+    </form>
+  </main>
+</div>
